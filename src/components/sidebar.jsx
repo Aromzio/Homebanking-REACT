@@ -6,6 +6,7 @@ import {Inicio} from './inicio';
 import { Cuenta } from './cuenta';
 import { Inversiones } from './inversiones';
 import { Login } from './login';
+import { Cuentas } from './cuentas';
  
 export const Sidebar = () => {
   return (
@@ -15,16 +16,16 @@ export const Sidebar = () => {
                 <nav className='flex flex-col text-3xl p-5 bg-gray-300 h-screen'>
                     <div className='flex flex-col space-y-10'>
                     <div className='transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 hover:bg-emerald-500 duration-300 rounded '>
-                        <Link to="/">Inicio</Link>
+                        <Link to="/"><button className='px-12'>Inicio</button></Link>
                     </div>
                     <div className='transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 hover:bg-emerald-500 duration-300 rounded'>
-                        <Link to="/productos">Productos</Link>
+                        <Link to="/productos"><button className='px-3'>Productos</button></Link>
                     </div>
                     <div className='transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 hover:bg-emerald-500 duration-300 rounded '>
-                    <Link to="/Inversiones">Inversiones</Link>
+                    <Link to="/Inversiones"><button className='px-2'>Conversiones</button></Link>
                     </div>
                     <div className='transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 hover:bg-emerald-500 duration-300 rounded '>
-                        <Link to="/cuenta">Cuenta</Link>
+                        <Link to="/cuenta"><button className='px-8'>Cuenta</button></Link>
                     </div>
                     </div>
                 </nav>
@@ -33,7 +34,7 @@ export const Sidebar = () => {
                     <Route path="/productos" element={<Productos/>}/>
                     <Route path="/cuenta" element={<Cuenta/>}/>
                     <Route path="/inversiones" element={<Inversiones/>}/>
-                    <Route path='/login'element={<Login/>}></Route>
+                    <Route path='/login'element={<Cuentas/>}></Route>
                 </Routes>
             </div>
         </Router>

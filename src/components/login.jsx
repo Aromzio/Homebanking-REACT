@@ -24,27 +24,28 @@ export function Login({ setUsuario }) {
 
 
     return (
-        <section className="flex absolute end-10 flex-col size-60 text-center bg-gray-800 text-white">
-            <h1>Registrate</h1>
+        <section className="flex flex-col absolute end-10 py-6 size-64 rounded-lg text-center  bg-gray-800 text-white">
+            <div className="flex-col align">
+            <h1 className="p-2 text-2xl">Login</h1>
 
             <form 
-                className="space-y-8"
+                className="flex-col inset-y-6"
                 onSubmit={handleSubmit}>
 
-                <input className="text-black"
+                <input className="text-black my-4"
                     type="text"
                     placeholder="user"
                     value={user}
                     onChange={e => setUser(e.target.value)}/>
-
+                
                 <input
                   placeholder="password"
-                  className="text-black"
+                  className="flex-col text-black my-4"
                     type="password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}/>
                   <Link>
-                <button>Continuar</button>
+                <button className="flex mx-24 bg-gray-600 p-2 rounded-lg hover">Continuar</button>
                 </Link>
                 <Routes>
                   <Route to='/' element={<Inicio/>}></Route>
@@ -52,7 +53,7 @@ export function Login({ setUsuario }) {
             </form>
 
             {error && <p>Todos los campos son obligatorios</p>}
-
+            </div>
         </section>
     )
 }

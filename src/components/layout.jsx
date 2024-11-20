@@ -1,8 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from
 'react-router-dom';
-import logo from '../visuals/logo192.png' 
-import App from '../App';
 import { Sidebar } from './sidebar'
 import call from '../visuals/call.png'
 import menu from '../visuals/menuicon.png' 
@@ -18,7 +16,7 @@ export const Encabezado = () => {
               <div className='flex size-0 sm:size-10 lg:size-12'>
                 <img src="logo192.png" alt="logo vancow" />
               </div>
-              <div className='flex text-3xl lg:text-4xl pb 2xl:text-5xl pt-4'>
+              <div className='flex text-3xl lg:text-4xl 2xl:text-5xl'>
                 <h1 className='text-white font-medium'>Vancow</h1>
               </div>
             </div>
@@ -26,8 +24,8 @@ export const Encabezado = () => {
             <div className='flex h-8 w-20 py-6 rounded'>
             <Router>
             <Link to='/login'>
-            <button className='bg-white rounded end-7'>
-              Registrate
+            <button className='bg-gray-700 px-3 py-2 text-xl text-white rounded end-7 hover:bg-gray-500'>
+              Login
             </button>
             </Link>
             <Routes>
