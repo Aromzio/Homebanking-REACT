@@ -1,17 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link} from
 'react-router-dom';
-import { Productos } from './productos';
-import {Inicio} from './inicio';
-import { Cuenta } from './cuenta';
-import { Inversiones } from './inversiones';
-import { Login } from './login';
-import { Cuentas } from './cuentas';
+
  
 export const Sidebar = () => {
   return (
     <div>
-        <Router>
+        
             <div>
                 <nav className='flex flex-col text-3xl p-5 bg-gray-300 h-screen'>
                     <div className='flex flex-col space-y-10'>
@@ -29,15 +24,9 @@ export const Sidebar = () => {
                     </div>
                     </div>
                 </nav>
-                <Routes>
-                    <Route path="/" element={<Inicio/>}/>
-                    <Route path="/productos" element={<Productos/>}/>
-                    <Route path="/cuenta" element={<Cuenta/>}/>
-                    <Route path="/inversiones" element={<Inversiones/>}/>
-                    <Route path='/login'element={<Cuentas/>}></Route>
-                </Routes>
+                
             </div>
-        </Router>
+        
     </div>
   )
 }

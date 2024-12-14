@@ -1,71 +1,69 @@
 import React, { useState } from "react";
 
-const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function LoginForm({ onLogin }) {
+  const [credentials, setCredentials] = useState({ username: "", password: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Email: ${email}\nPassword: ${password}`);
+    onLogin(credentials);
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Iniciar Sesión
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
+        <h2 className="text-4xl font-bold text-center text-emerald-600">
+          Login
         </h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="mt-6">
           <div className="mb-4">
             <label
-              htmlFor="email"
-              className="block text-gray-700 font-medium mb-2"
+              htmlFor="username"
+              className="block text-gray-700 font-medium"
             >
-              Correo Electrónico
+              Usuario
             </label>
             <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-              placeholder="correo@ejemplo.com"
+              id="username"
+              type="text"
+              className="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400"
+              placeholder="Ingresa tu usuario"
+              value={credentials.username}
+              onChange={(e) =>
+                setCredentials({ ...credentials, username: e.target.value })
+              }
               required
             />
           </div>
           <div className="mb-6">
             <label
               htmlFor="password"
-              className="block text-gray-700 font-medium mb-2"
+              className="block text-gray-700 font-medium"
             >
               Contraseña
             </label>
             <input
-              type="password"
               id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-              placeholder="********"
+              type="password"
+              className="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400"
+              placeholder="Ingresa tu contraseña"
+              value={credentials.password}
+              onChange={(e) =>
+                setCredentials({ ...credentials, password: e.target.value })
+              }
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300"
+            className="w-full px-4 py-2 text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg font-medium transition"
           >
             Iniciar Sesión
           </button>
         </form>
-        <p className="text-center text-gray-600 mt-4">
-          ¿No tienes una cuenta?{" "}
-          <a href="#" className="text-blue-600 hover:underline">
-            Regístrate
-          </a>
-        </p>
+        
       </div>
     </div>
   );
-};
+}
 
 export default LoginForm;

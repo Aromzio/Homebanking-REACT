@@ -36,7 +36,7 @@ const ProductsDemo = () => {
     <div className="bg-gray-300 rounded-lg flex-auto  py-10 px-6">
       <h2 className="text-3xl font-bold text-center mb-8">
         Productos Financieros       </h2>
-      <div className="flex gap-10">
+      <div className="flex gap-6">
         {products.map((product) => (
           <div
             key={product.id}

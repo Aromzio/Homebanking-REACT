@@ -22,16 +22,11 @@ export const Encabezado = () => {
             </div>
       </div>  
             <div className='flex h-8 w-20 py-6 rounded'>
-            <Router>
-            <Link to='/login'>
+            
             <button className='bg-gray-700 px-3 py-2 text-xl text-white rounded end-7 hover:bg-gray-500'>
               Login
             </button>
-            </Link>
-            <Routes>
-              <Route path='/login'element={<Login/>}></Route>
-            </Routes>
-            </Router>
+      
             </div>
         </div>
   )

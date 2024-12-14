@@ -4,7 +4,7 @@ import imginicio from '../visuals/imginicio.jpeg'
 
 export const Inicio = () => {
   return (
-    <div className='absolute  container center bg- flex left-60 top-24 sm:top-2 w-screen'>
+    <div className='absolute  container flex left-60 top-24 sm:top-22 w-screen'>
       <h2 className='relative text-5xl'>Inicio</h2>  
       <div className='absolute top-16  '>
         <div className='rounded-lg'><img src={imginicio} alt="imageninicio" />
